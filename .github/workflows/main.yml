@@ -1,0 +1,17 @@
+stages:
+    - build
+    - test
+build:
+    stage: build
+    script:
+        - echo "Hello World"
+        - mkdir hello
+        - touch hello/info.txt
+    artifacts:
+        paths:
+            - hello/
+test:
+    stage: test
+    script:
+        - echo "Testing"
+        - test -f "hello/info.txt"
